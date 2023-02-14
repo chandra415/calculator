@@ -17,4 +17,4 @@ steps:
 
   - task: DownloadPipelineArtifact@2
     inputs:
-      artifact: app1
+      artifact: build.txt
