@@ -12,5 +12,5 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        sudo echo "$(Build.SourcesDirectory)" > build.txt
+        sudo echo "$(Build.BuildNumber)" > build.txt
         cat build.txt
