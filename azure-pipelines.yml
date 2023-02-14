@@ -12,7 +12,7 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-        sudo echo "$(Build.BuildNumber)" > build.txt
+        sudo echo "$(Build.BuildNumber)" This is the buildnumber of publish_artifact > build.txt
         cat build.txt
   - task: CopyFiles@2
     displayName: 'Copy scripts'
