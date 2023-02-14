@@ -14,3 +14,7 @@ steps:
       script: |
         sudo echo "$(Build.BuildNumber)" > build.txt
         cat build.txt
+
+  - task: DownloadPipelineArtifact@2
+    inputs:
+      artifact: app1
