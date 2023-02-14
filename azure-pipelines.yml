@@ -14,9 +14,12 @@ steps:
       script: |
         sudo echo "$(Build.BuildNumber)" > build.txt
         cat build.txt
-
-  - task: DownloadPipelineArtifact@2
+  - task: CopyFiles@2
+    displayName: 'Copy scripts'
     inputs:
-      buildType: 'current'
-      artifactName: 'build.txt'
-      targetPath: '$(Pipeline.Workspace)'
+        contents: '*.txt'
+        targetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - publish: '$(Build.ArtifactStagingDirectory)/build.txt'
+    displayName: 'Publish Artifact'
+    artifact: app1
