@@ -22,4 +22,3 @@ steps:
 
   - publish: '$(Build.ArtifactStagingDirectory)/build.txt'
     displayName: 'Publish Artifact'
-    artifact: app1
